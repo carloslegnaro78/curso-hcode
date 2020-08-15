@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Task;
 use Illuminate\Http\Request;
 
+
 class TasksContorller extends Controller
 {
         
@@ -17,6 +18,16 @@ class TasksContorller extends Controller
     public function store(Request $request)
     {
 
+        // Available Validation Rules
+
+        // https://laravel.com/docs/7.x/validation
+
+        $request->validate([
+            'name'=>'required|max:255',
+            'complete'=>'required'
+        ]);
+        
+        
         $task = Task::create([
             'name'=>$request->input('name'),
             'complete'=>$request->input('complete')
@@ -35,6 +46,10 @@ class TasksContorller extends Controller
 
     public function update(Request $request, Task $task)
     {
+
+        $request->validate([
+            'name'=>'required|max:255'           
+        ]);
 
         $task->name = $request->input('name');
 
