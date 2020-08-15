@@ -8,22 +8,5 @@ use Illuminate\Http\Request;
 
 //https://stackoverflow.com/questions/59149877/visual-studio-code-php-intelephense-keep-showing-not-necessary-error
 
-Route::get('tasks', function(){
-
-    $tasks = [
-        [
-            "id"=>1,
-            "name"=>"Estudar PHP 7",
-            "complete"=>false
-        ],
-
-        [
-            "id"=>2,
-            "name"=>"Estudar PHP 7",
-            "complete"=>true
-        ]
-
-    ];
-
-    return $tasks;
-});
+Route::get("tasks", "TasksContorller@index");
+Route::post("tasks", "TasksContorller@store");
