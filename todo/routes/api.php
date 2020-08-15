@@ -11,3 +11,4 @@ use Illuminate\Http\Request;
 Route::get("tasks", "TasksContorller@index");
 Route::get("tasks/{task}","TasksContorller@show");
 Route::post("tasks", "TasksContorller@store");
+Route::patch("tasks/{task}","TasksContorller@update");
