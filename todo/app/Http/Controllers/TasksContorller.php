@@ -11,13 +11,18 @@ class TasksContorller extends Controller
     {        
             
         return Task::all();
-        
+
     }
     
-    public function store()
+    public function store(Request $request)
     {
 
-        return "Ok";
+        $task = Task::create([
+            'name'=>$request->input('name'),
+            'complete'=>$request->input('complete')
+        ]);
+
+        return $task;
 
     }
     
