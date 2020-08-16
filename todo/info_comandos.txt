@@ -1,0 +1,7 @@
+php artisan --version
+php artisan make:model Task
+php artisan make:migration create_tasks_table
+php artisan migrate
+php artisan cache:clear
+php artisan make:factory TaskFactory
+php artisan make:seed TasksTableSeeder
